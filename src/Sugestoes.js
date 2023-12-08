@@ -11,34 +11,34 @@ const Sugestoes = () => {
   const [suggestions, setSuggestions] = useState([])
   const sectionRefs = useRef({});
   const names = [
-    'Anilson Stebel', 
-    'Arlete Stebel', 
-    'Celso Pereira', 
-    'Cristiane Kawano', 
-    'Daniel Burkinsky', 
-    'Daniela Stoebel K.', 
-    'Davi T. S. Kawano', 
-    'Eduardo Stebel', 
-    'Fernando Kawano', 
-    'Francisco Paiva', 
-    'Glaucio Filho', 
-    'Glaucio Pai', 
-    'Glauco Pereira', 
-    'Gustavo Kawano', 
-    'João Henrique Stebel', 
-    'João Stebel', 
-    'Jorge Kawano', 
-    'Karla Burkinski', 
-    'Leonardo Pereira', 
-    'Luana Pereira', 
-    'Maria Cristina', 
-    'Myrian Pereira', 
-    'Rafael P. Stebel', 
-    'Sandra Burkinski', 
-    'Selma Camargo', 
-    'Sérgio Stebel', 
-    'Sirlei Kawano', 
-    'Tereza Stebel', 
+    'Anilson Stebel',
+    'Arlete Stebel',
+    'Celso Pereira',
+    'Cristiane Kawano',
+    'Daniel Burkinsky',
+    'Daniela Stoebel K.',
+    'Davi T. S. Kawano',
+    'Eduardo Stebel',
+    'Fernando Kawano',
+    'Francisco Paiva',
+    'Glaucio Filho',
+    'Glaucio Pai',
+    'Glauco Pereira',
+    'Gustavo Kawano',
+    'João Henrique Stebel',
+    'João Stebel',
+    'Jorge Kawano',
+    'Karla Pereira',
+    'Leonardo Pereira',
+    'Luana Pereira',
+    'Maria Cristina',
+    'Myrian Pereira',
+    'Rafael P. Stebel',
+    'Sandra Burkinski',
+    'Selma Camargo',
+    'Sérgio Stebel',
+    'Sirlei Kawano',
+    'Tereza Stebel',
     'Vanessa P. Stebel'
   ]
   const ROOT_COLLECTION = 'sugestoes'
@@ -158,8 +158,9 @@ const Sugestoes = () => {
         </ul>
       </div>
       <div className='main'>
-        <div style={{ display: 'flex', justifyContent: 'center' }}>
-          <img src="/assets/image.png" alt='imagem' />
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+          <img src="/assets/image.png" alt='imagem' style={{marginBottom: '1rem'}} />
+          <h4>Valor do presente entre R$ 100,00 e R$ 150,00</h4>
         </div>
         {names?.map(name => {
           return <section id={UPPER_SNAKE_CASE(name)} key={name} ref={sectionRefs.current[UPPER_SNAKE_CASE(name)]}>
