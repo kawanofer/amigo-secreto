@@ -1,124 +1,139 @@
 :root {
-    --white: #fff;
-    --text-light: #333;
-    --text-dark: #1D1D1F;
-    --blue: #2997FF;
-    --button: #45a049;
-    --buttonHover: #034F1B;
-    --red1: #BD3634;
-    --red2: #7E121D;
-    --color1: #E6DCB1;
-    --color2: #CEAC5C;
+  --white: #fff;
+  --text-light: #333;
+  --text-dark: #1D1D1F;
+  --blue: #2997FF;
+  --button: #45a049;
+  --buttonHover: #034F1B;
+  --red1: #BD3634;
+  --red2: #7E121D;
+  --color1: #E6DCB1;
+  --color2: #CEAC5C;
 }
 
 *,
 *:after,
 *:before {
-    margin: 0;
-    padding: 0;
-    outline: 0;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 h2 {
-    color: var(--red2);
-    font-weight: 600;
+  color: var(--red2);
+  font-weight: 600;
 }
 
 img {
-    margin: 0 auto;
-    width: 282px;
-    height: 100px;
+  margin: 0 auto;
+  width: 282px;
+  height: 100px;
 }
 
 body {
-    background: #fff;
-    color: #090909;
-    font-size: 18px;
-    font-family: 'Roboto', Arial, Helvetica, sans-serif;
-    -webkit-font-smoothing: antialiased !important;
-    width: 100%;
-    max-width: 1100px;
-    margin: 0 auto;
+  background: #fff;
+  color: #090909;
+  font-size: 18px;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased !important;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
-header {
-    color: var(--text-dark);
-    left: 0;
-    padding: 12px 0;
-    font-size: 20px;
-    width: auto;
-    position: fixed;
-    height: 100%;
-    overflow: auto;
+.container {
+  display: flex;
 }
 
-header nav ul {
-    width: fit-content;
-    gap: 1rem;
-    padding: 1rem 0;
+.header {
+  background-color: var(--color1);
+  color: var(--text-dark);
+  flex: 0 0 auto;
+  font-size: 20px;
+  z-index: 1000; /* Increase the z-index value if needed */
 }
 
-header nav ul li {
-    min-width: fit-content;
-    height: fit-content;
-    padding: 0 0.75rem;
-    cursor: pointer;
-    list-style: none;
+.header ul {
+  width: fit-content;
+  padding: 1rem 0;
+  margin: 0;
 }
 
-header nav ul li a {
-    display: block;
-    color: var(--text-dark);
-    padding: 8px 16px;
-    text-decoration: none;
+.header ul li {
+  min-width: fit-content;
+  height: fit-content;
+  cursor: pointer;
+  list-style: none;
 }
 
-header nav ul li a:hover:not(.active) {
-    background-color: var(--red1);
-    color: white;
+.header ul li a {
+  display: block;
+  color: var(--text-dark);
+  padding: 8px 16px;
+  text-decoration: none;
 }
 
-main {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    padding-top: 30px;
-    
+.header ul li a:hover:not(.active) {
+  background-color: var(--red1);
+  color: white;
 }
 
-main section {
-    text-align: center;
-    position: relative;
-    margin-bottom: 30px;
-    border-top: 2px solid var(--red1);
-    padding-top: 20px;
+.main {
+  flex-grow: 1;
+  margin: 30px;
 }
 
-main section:nth-child(2) {
-    border-top: none;
+.main section {
+  padding: 30px 0;
+  border-top: 2px solid #ccc;
+}
+
+.main section:nth-child(2) {
+  border-top: none;
 }
 
 textarea {
-    height: 150px;
-    padding: 10px;
-    margin-bottom: 15px;
-    border-radius: 5px;
-    font-size: 18px;
+  height: 150px;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  font-size: 18px;
 }
 
 input[type="submit"] {
-    padding: 10px 20px;
-    background-color: var(--button);
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
+  padding: 10px 20px;
+  background-color: var(--button);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
 }
 
 input[type="submit"]:hover {
-    background-color: var(--buttonHover);
+  background-color: var(--buttonHover);
+}
+
+.scroll-to-top-button {
+  align-items: center;
+  background-color: var(--red1);
+  border-radius: 50%;
+  border: none;
+  bottom: 20px;
+  color: #fff;
+  cursor: pointer;
+  display: none;
+  font-size: 20px;
+  height: 40px;
+  justify-content: center;
+  position: fixed;
+  right: 20px;
+  width: 40px;
+}
+
+.scroll-to-top-button.visible {
+  display: flex;
 }
