@@ -10,7 +10,37 @@ const Sugestoes = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [suggestions, setSuggestions] = useState([])
   const sectionRefs = useRef({});
-  const names = ['Anilson Stebel', 'Arlete Stebel', 'Celso Pereira', 'Cristiane Kawano', 'Daniel Burkinsky', 'Daniela Stoebel K.', 'Davi T. S. Kawano', 'Tereza Stebel', 'Eduardo Stebel', 'Fernando Kawano', 'Francisco Paiva', 'Glaucio Filho', 'Glaucio Pai', 'Glauco Pereira', 'Gustavo Kawano', 'João Henrique Stebel', 'Jorge Kawano', 'Karla Burkinski', 'Leonardo Pereira', 'Luana Pereira', 'Maria Cristina', 'Myrian Pereira', 'Rafael P. Stebel', 'Sandra Burkinski', 'Selma Camargo', 'Sérgio Stebel', 'João Stebel', 'Sirlei Kawano', 'Vanessa P. Stebel']
+  const names = [
+    'Anilson Stebel', 
+    'Arlete Stebel', 
+    'Celso Pereira', 
+    'Cristiane Kawano', 
+    'Daniel Burkinsky', 
+    'Daniela Stoebel K.', 
+    'Davi T. S. Kawano', 
+    'Eduardo Stebel', 
+    'Fernando Kawano', 
+    'Francisco Paiva', 
+    'Glaucio Filho', 
+    'Glaucio Pai', 
+    'Glauco Pereira', 
+    'Gustavo Kawano', 
+    'João Henrique Stebel', 
+    'João Stebel', 
+    'Jorge Kawano', 
+    'Karla Burkinski', 
+    'Leonardo Pereira', 
+    'Luana Pereira', 
+    'Maria Cristina', 
+    'Myrian Pereira', 
+    'Rafael P. Stebel', 
+    'Sandra Burkinski', 
+    'Selma Camargo', 
+    'Sérgio Stebel', 
+    'Sirlei Kawano', 
+    'Tereza Stebel', 
+    'Vanessa P. Stebel'
+  ]
   const ROOT_COLLECTION = 'sugestoes'
 
   // Firebase configuration (replace with your own config)
