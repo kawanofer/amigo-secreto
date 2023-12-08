@@ -128,7 +128,7 @@ const Sugestoes = () => {
         </ul>
       </div>
       <div className='main'>
-        <div style={{display: 'flex', justifyContent: 'center'}}>
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
           <img src="/assets/image.png" alt='imagem' />
         </div>
         {names?.map(name => {
