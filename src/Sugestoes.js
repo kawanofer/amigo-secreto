@@ -33,7 +33,7 @@ const Sugestoes = () => {
     'Luana Pereira',
     'Maria Cristina',
     'Myrian Pereira',
-    'Rafael P. Stebel',
+    'Rafael S. Pereira',
     'Sandra Burkinski',
     'Selma Camargo',
     'Sérgio Stebel',
