@@ -128,7 +128,9 @@ const Sugestoes = () => {
         </ul>
       </div>
       <div className='main'>
-        <img src="/assets/image.png" alt='imagem' />
+        <div style={{display: 'flex', justifyContent: 'center'}}>
+          <img src="/assets/image.png" alt='imagem' />
+        </div>
         {names?.map(name => {
           return <section id={UPPER_SNAKE_CASE(name)} key={name} ref={sectionRefs.current[UPPER_SNAKE_CASE(name)]}>
             <h2>{name}</h2>
