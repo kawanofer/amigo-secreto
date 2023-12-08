@@ -28,8 +28,9 @@ h2 {
 }
 
 img {
-    width: 100%;
-    height: auto;
+    margin: 0 auto;
+    width: 282px;
+    height: 100px;
 }
 
 body {
@@ -96,7 +97,7 @@ main section {
     padding-top: 20px;
 }
 
-main section:first-child {
+main section:nth-child(2) {
     border-top: none;
 }
 

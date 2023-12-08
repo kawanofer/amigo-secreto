@@ -3,14 +3,13 @@ import { isEmpty, toUpper, trim, snakeCase } from 'lodash';
 import { useForm } from "react-hook-form";
 import { toast } from 'react-toastify'
 
-// Import necessary Firebase modules
 import { initializeApp } from 'firebase/app';
 import { getFirestore, doc, collection, setDoc, getDocs } from 'firebase/firestore';
 
 const Sugestoes = () => {
   const [suggestions, setSuggestions] = useState([])
   const sectionRefs = useRef({});
-  const names = ['Anilson Stebel', 'Arlete Stebel', 'Celso', 'Cristiane Kawano', 'Daniel Burkinsky', 'Daniela Stoebel K.', 'Davi T. S. Kawano', 'Tereza Stebel', 'Eduardo Stebel', 'Fernando Kawano', 'Francisco', 'Glaucio Filho', 'Glaucio Pai', 'Glauco', 'Gustavo Kawano', 'João Henrique Stebel', 'Jorge Kawano', 'Karla Thomaz', 'Leonardo', 'Luana', 'Maria Cristina', 'Myrian', 'Rafael P. Stebel', 'Sandra', 'Selma Camargo', 'Sérgio Stebel', 'João Stebel', 'Sirlei Kawano', 'Vanessa P. Stebel']
+  const names = ['Anilson Stebel', 'Arlete Stebel', 'Celso', 'Cristiane Kawano', 'Daniel Burkinsky', 'Daniela Stoebel K.', 'Davi T. S. Kawano', 'Tereza Stebel', 'Eduardo Stebel', 'Fernando Kawano', 'Francisco Paiva', 'Glaucio Filho', 'Glaucio Pai', 'Glauco', 'Gustavo Kawano', 'João Henrique Stebel', 'Jorge Kawano', 'Karla Thomaz', 'Leonardo', 'Luana', 'Maria Cristina', 'Myrian', 'Rafael P. Stebel', 'Sandra', 'Selma Camargo', 'Sérgio Stebel', 'João Stebel', 'Sirlei Kawano', 'Vanessa P. Stebel']
   const ROOT_COLLECTION = 'sugestoes'
 
   // Firebase configuration (replace with your own config)
@@ -43,17 +42,18 @@ const Sugestoes = () => {
   useEffect(() => {
     if (!isEmpty(suggestions)) {
       console.log('Sugestões: ', suggestions)
-      suggestions.forEach((item, index) => {
-        setValue(`${UPPER_SNAKE_CASE(item.name)}-${index}`, item.value)
+      suggestions.forEach((item) => {
+        setValue(UPPER_SNAKE_CASE(item.name), item.value)
       })
     }
-  }, [suggestions, names])
+  }, [suggestions, names, setValue])
 
   const onSubmit = (data) => {
     Object.entries(data).forEach(([key, value]) => {
       SaveToFirebase(key, value)
     })
     toast.success("Dados salvos com sucesso.")
+    FetchDataFromFirestore()
   }
 
   const UPPER_SNAKE_CASE = (string) => {
@@ -81,11 +81,9 @@ const Sugestoes = () => {
   };
 
   const SaveToFirebase = async (docName, value) => {
-    console.log('Salvando: ', docName, value)
     try {
       const collectionRef = collection(db, ROOT_COLLECTION)
-      const sanitizedDocName = docName.replace(/[\\/]/g, "_");
-      const specificDocRef = doc(collectionRef, sanitizedDocName);
+      const specificDocRef = doc(collectionRef, docName);
       await setDoc(specificDocRef, { value });
     } catch (error) {
       console.error('Error saving data to Firebase:', error);
@@ -109,8 +107,8 @@ const Sugestoes = () => {
         </nav>
       </header>
       <main>
-        <img src="/public/assets/image.png" alt='imagem' />
-        {names?.map((name, index) => {
+        <img src="/assets/image.png" alt='imagem' />
+        {names?.map(name => {
           return <section id={UPPER_SNAKE_CASE(name)} key={name} ref={sectionRefs.current[UPPER_SNAKE_CASE(name)]}>
             <h2>{name}</h2>
             <form onSubmit={handleSubmit((data) => onSubmit(data))}>
