@@ -13,7 +13,7 @@ const Sugestoes = () => {
   const names = [
     'Anilson Stebel',
     'Arlete Stebel',
-    'Celso Pereira',
+    'Celso Cordeiro,
     'Cristiane Kawano',
     'Daniel Burkinsky',
     'Daniela Stoebel K.',
