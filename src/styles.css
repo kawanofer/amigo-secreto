@@ -180,8 +180,9 @@ input[type="submit"]:hover {
   .header ul li a {
     display: block;
     color: var(--text-dark);
-    padding: 8px 16px;
+    padding: 0px 16px;
     text-decoration: none;
+    font-size: 16px;
   }
 
   .main section:last-child {
