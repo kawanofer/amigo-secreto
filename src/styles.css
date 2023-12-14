@@ -1,14 +1,14 @@
 :root {
   --white: #fff;
   --text-light: #333;
-  --text-dark: #1D1D1F;
-  --blue: #2997FF;
+  --text-dark: #1d1d1f;
+  --blue: #2997ff;
   --button: #45a049;
-  --buttonHover: #034F1B;
-  --red1: #BD3634;
-  --red2: #7E121D;
-  --color1: #E6DCB1;
-  --color2: #CEAC5C;
+  --buttonHover: #034f1b;
+  --red1: #bd3634;
+  --red2: #7e121d;
+  --color1: #e6dcb1;
+  --color2: #ceac5c;
 }
 
 *,
@@ -109,7 +109,7 @@ textarea {
   font-size: 18px;
 }
 
-input[type="submit"] {
+input[type='submit'] {
   padding: 10px 20px;
   background-color: var(--button);
   color: #fff;
@@ -119,7 +119,7 @@ input[type="submit"] {
   font-size: 16px;
 }
 
-input[type="submit"]:hover {
+input[type='submit']:hover {
   background-color: var(--buttonHover);
 }
 
@@ -128,7 +128,7 @@ input[type="submit"]:hover {
   background-color: var(--red1);
   border-radius: 50%;
   border: none;
-  bottom: 20px;
+  bottom: 60px;
   color: #fff;
   cursor: pointer;
   display: none;
@@ -136,7 +136,7 @@ input[type="submit"]:hover {
   height: 40px;
   justify-content: center;
   position: fixed;
-  right: 20px;
+  right: 10px;
   width: 40px;
 }
 
@@ -145,7 +145,6 @@ input[type="submit"]:hover {
 }
 
 @media only screen and (max-width: 425px) {
-
   .header {
     position: fixed;
     background-color: var(--color1);
@@ -188,5 +187,4 @@ input[type="submit"]:hover {
   .main section:last-child {
     margin-bottom: 30px;
   }
-
 }
