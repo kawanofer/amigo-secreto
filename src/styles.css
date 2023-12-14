@@ -128,7 +128,7 @@ input[type="submit"]:hover {
   background-color: var(--red1);
   border-radius: 50%;
   border: none;
-  bottom: 20px;
+  bottom: 60px;
   color: #fff;
   cursor: pointer;
   display: none;
@@ -136,7 +136,7 @@ input[type="submit"]:hover {
   height: 40px;
   justify-content: center;
   position: fixed;
-  right: 20px;
+  right: 10px;
   width: 40px;
 }
 
