@@ -33,6 +33,10 @@ img {
   height: 100px;
 }
 
+textarea::placeholder {
+  color: darkgray;
+}
+
 body {
   background: #fff;
   color: #090909;
@@ -53,7 +57,8 @@ body {
   color: var(--text-dark);
   flex: 0 0 auto;
   font-size: 20px;
-  z-index: 1000; /* Increase the z-index value if needed */
+  z-index: 1000;
+  /* Increase the z-index value if needed */
 }
 
 .header ul {
@@ -139,8 +144,47 @@ input[type="submit"]:hover {
 }
 
 @media only screen and (max-width: 425px) {
+
   .header {
-    display: none;
+    position: fixed;
+    background-color: var(--color1);
+    bottom: 0;
+    box-shadow: 0px -5px 5px rgba(0, 0, 0, 0.2);
+    color: var(--text-dark);
+    left: 0;
+    overflow-x: auto;
+    width: 100%;
+  }
+
+  .header ul {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding: 1rem 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  .header ul li {
+    min-width: fit-content;
+    height: fit-content;
+    cursor: pointer;
+    margin-right: 15px;
+  }
+
+  .header ul li:last-child {
+    margin-right: 0;
+  }
+
+  .header ul li a {
+    display: block;
+    color: var(--text-dark);
+    padding: 8px 16px;
+    text-decoration: none;
+  }
+
+  .main section:last-child {
+    margin-bottom: 30px;
   }
 
 }

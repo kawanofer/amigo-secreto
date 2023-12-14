@@ -1,6 +1,7 @@
 import React, { lazy, Suspense } from 'react';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import 'react-perfect-scrollbar/dist/css/styles.css'
 
 const Sugestoes = lazy(() => import('./Sugestoes'));
 

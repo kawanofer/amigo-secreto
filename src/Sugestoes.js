@@ -193,7 +193,7 @@ const Sugestoes = () => {
         <h2>{name}</h2>
         <form onSubmit={handleSubmit((data) => onSubmit(data))}>
           <div style={{ display: 'flex', flexDirection: 'column' }}>
-            <textarea placeholder={`${name} digite aqui sua sugestão de presente.`} {...register(`${upperSnakeCaseName}`)} />
+            <textarea placeholder='Digite aqui sua sugestão de presente' {...register(`${upperSnakeCaseName}`)} />
             <input type="submit" value='Salvar' />
           </div>
         </form>
